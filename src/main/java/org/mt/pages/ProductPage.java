@@ -57,6 +57,8 @@ public class ProductPage extends BasePage {
         var data = String.format("Product desc: %s\nProduct Price: %s", descLabelText, priceLabelText);
         writeDataToFile(data);
 
+        takeScreenshot("Product page");
+
         return this;
     }
 

@@ -21,9 +21,9 @@ public class SearchTest extends BaseTest {
         var excelUtil = new ExcelUtil();
 
         excelUtil.readFile(excelFile, "sheet1");
-        var dataMatris = excelUtil.getDataList();
-        var keyword1 = dataMatris.get(0).get(0);
-        var keyword2 = dataMatris.get(0).get(1);
+        var dataList = excelUtil.getDataList();
+        var keyword1 = dataList.get(0).get(0);
+        var keyword2 = dataList.get(0).get(1);
 
         getHomePage()
                 .verifyHomePageIsOpen()

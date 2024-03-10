@@ -34,6 +34,9 @@ public class BasketPage extends BasePage {
     @FindBy(css = ".m-basket__remove")
     WebElement basketRemoveButton;
 
+    @FindBy(xpath = "//h4[text()='Sepetiniz Güncellenmiştir']")
+    WebElement updateMessagePopup;
+
     @FindBy(xpath = "//h4[text()='Ürün Silindi']")
     WebElement deleteMessagePopup;
 
@@ -97,6 +100,7 @@ public class BasketPage extends BasePage {
         if (quantityList.size() > 1) {
             var firstSalePrice = getText(salePriceLabel);
             selectByValue(quantitySelect, quantity.toString());
+            wait.until(ExpectedConditions.visibilityOf(updateMessagePopup));
             wait.until((ExpectedCondition<Boolean>) d -> (Boolean) !getText(salePriceLabel).equals(firstSalePrice));
 
             var quantitySelectLabel = getAttribute(quantitySelect, "aria-label");

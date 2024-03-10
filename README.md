@@ -1,6 +1,7 @@
 # beymen-ui
 
 Beymen ui test projesi
+Testleri çalıştırmak ve raporu görüntülemek için maven ve allure command line kurulu olmalıdır.
 
 Test
 ~~~
